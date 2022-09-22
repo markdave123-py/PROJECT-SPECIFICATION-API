@@ -7,7 +7,7 @@ from datetime import *
 
 from .. import autho2
 
-router = APIRouter(prefix='/projects',tags=["Tasks(specify the deadline (days) at the end of the create_task router)"])
+router = APIRouter(prefix='/projects',tags=["Tasks assigned to participants in a project"])
 
 @router.post('/{id}/tasks', response_model=schemas.Task_create_response)
 def create_task(id: int, task: schemas.Task_request,db: Session = Depends(get_db), 
